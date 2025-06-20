@@ -1,66 +1,53 @@
-How to Use This Boilerplate (with updated search/replace):
+## How to Use This Boilerplate (with updated search/replace):
 
-1.
-Clone the Repo:
-git clone https://github.com/your-username/__PLUGIN_SLUG__.git my-new-plugin-slug
-(Remember to manually rename the cloned folder from __PLUGIN_SLUG__ to my-new-plugin-slug)
+1. Clone the Repo:
 
+    ```git clone https://github.com/boodaah3d/wp_react_plugin_boilerplate my-new-plugin-slug```
 
-2.
-Navigate to the New Folder:
-cd my-new-plugin-slug
+    (Remember to manually rename the cloned folder from __PLUGIN_SLUG__ to my-new-plugin-slug)
 
 
-3.
-Rename the main plugin file:
-Rename __PLUGIN_SLUG__.php to my-new-plugin-slug.php.
+2. Navigate to the New Folder:
+
+    ```cd my-new-plugin-slug```
 
 
-4.
-Perform Search and Replace:
-Use your IDE's global search and replace.
+3. Rename the main plugin file:
 
-	-
-Find: __PLUGIN_SLUG__
+    ```Rename __PLUGIN_SLUG__.php to my-new-plugin-slug.php.```
 
 
-	-
-Replace With: my-new-plugin-slug (e.g., ga-dashboard)
+4. Perform Search and Replace:
 
-		- This covers folder names, text domains, CSS class prefixes, React root IDs, JS handles.
-	-
-Find: __PHP_PREFIX__
+    ```
+    Use your IDE's global search and replace.
 
+	- Find: __PLUGIN_SLUG__
 
-	-
-Replace With: my_new_prefix_ (e.g., ga_dashboard_)
+	- Replace With: my-new-plugin-slug (e.g., ga-dashboard)
 
-		- This covers PHP function prefixes, class names, JS global object for wp_localize_script. Remember to include the trailing underscore if you want your prefixes to end with one.
-	-
-Find: __PLUGIN_NAME__
+	- This covers folder names, text domains, CSS class prefixes, React root IDs, JS handles.
 
+    - Find: __PHP_PREFIX__
 
-	-
-Replace With: My New Plugin Name (e.g., Google Analytics Dashboard)
+	- Replace With: my_new_prefix_ (e.g., ga_dashboard_)
 
+	- This covers PHP function prefixes, class names, JS global object for wp_localize_script. Remember to include the trailing underscore if you want your prefixes to end with one.
 
-	-
-Find: __SHORTCODE_TAG__
+    - Find: __PLUGIN_NAME__
 
+	- Replace With: My New Plugin Name (e.g., Google Analytics Dashboard)
 
-	-
-Replace With: my_plugin_shortcode (e.g., ga_dashboard)
+	- Find: __SHORTCODE_TAG__
 
+	- Replace With: my_plugin_shortcode (e.g., ga_dashboard)
 
-	-
-Update Author/URI: Search for "Your Name/Company" and "yourwebsite.com".
+	- Update Author/URI: Search for "Your Name/Company" and "yourwebsite.com".
 
+5. Install Dependencies:
 
-5.
-Install Dependencies:
-npm install
+    ```npm install```
 
+6. Develop & Build:
 
-6.
-Develop & Build:
-npm run dev / npm run build
+    ```npm run dev / npm run build```
