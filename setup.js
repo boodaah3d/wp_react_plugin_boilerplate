@@ -14,7 +14,9 @@ const pluginSlug = pluginName
   .replace(/ +/g, '-')              // spaces to hyphens
   .replace(/-+/g, '-');             // collapse multiple hyphens
 
-const phpPrefix = pluginSlug.replace(/-+/g, '_') + '_';
+const shortcodeTag = pluginSlug.replace(/-+/g, '_');
+
+const phpPrefix = shortcodeTag + '_';
 
 const directoryName = path.basename(__dirname);
 
@@ -41,11 +43,14 @@ function replaceInFile(filePath) {
   const updated = content
     .replace(/__PLUGIN_NAME__/g, pluginName)
     .replace(/__PLUGIN_SLUG__/g, pluginSlug)
+    .replace(/__SHORTCODE_TAG__/g, shortcodeTag)
     .replace(/__PHP_PREFIX__/g, phpPrefix);
+
+  const base = path.basename(filePath);
 
   if (updated !== content) {
     fs.writeFileSync(filePath, updated, 'utf8');
-    console.log(`Updated contents: ${filePath}`);
+    console.log(`Updated contents: ${base}`);
   }
 }
 
@@ -58,13 +63,14 @@ function renameItem(oldPath) {
   const newBase = base
     .replace(/__PLUGIN_NAME__/g, pluginName)
     .replace(/__PLUGIN_SLUG__/g, pluginSlug)
+    .replace(/__SHORTCODE_TAG__/g, shortcodeTag)
     .replace(/__PHP_PREFIX__/g, phpPrefix);
 
   const newPath = path.join(dir, newBase);
 
   if (oldPath !== newPath) {
     fs.renameSync(oldPath, newPath);
-    console.log(`Renamed: ${oldPath} → ${newPath}`);
+    console.log(`Renamed: ${base} → ${newBase}`);
     return newPath;
   }
 
