@@ -61,4 +61,5 @@ After the setup script finishes, you can detached from the boilerplate repo and 
 Now you're ready to start building\!
 
 * **Production Build:** Build files for your plugin.
+
     npm run build
