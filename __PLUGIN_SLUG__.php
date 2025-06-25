@@ -17,24 +17,6 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-/**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing hooks.
- */
-require plugin_dir_path(__FILE__).'includes/class-__PHP_PREFIX__plugin.php';
-
-/**
- * Begins execution of the plugin.
- *
- * @since    1.0.0
- */
-function __PHP_PREFIX__run_plugin()
-{
-    $plugin = new __PHP_PREFIX__Plugin;
-    $plugin->run();
-}
-__PHP_PREFIX__run_plugin();
-
 // Include shortcode handler
 require_once plugin_dir_path(__FILE__).'includes/shortcode.php';
 
