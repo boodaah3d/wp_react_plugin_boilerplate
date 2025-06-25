@@ -25,7 +25,7 @@ if (directoryName !== pluginSlug) {
   process.exit(1);
 }
 
-console.log('\nProcessing ...');
+console.log('\nProcessing ...\n');
 
 function shouldExclude(filePath) {
   const parts = filePath.split(path.sep);
