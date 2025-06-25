@@ -28,8 +28,8 @@ function replaceInFile(filePath) {
   const updated = content
     .replace(/My Plugin/g, pluginName)
     .replace(/my-plugin/g, pluginSlug)
-    .replace(/my_plugin/g, shortcodeTag)
-    .replace(/my_plugin_/g, phpPrefix);
+    .replace(/my_plugin_/g, phpPrefix)
+    .replace(/my_plugin/g, shortcodeTag);
 
   const base = path.basename(filePath);
 
@@ -48,8 +48,8 @@ function renameItem(oldPath) {
   const newBase = base
     .replace(/My Plugin/g, pluginName)
     .replace(/my-plugin/g, pluginSlug)
-    .replace(/my_plugin/g, shortcodeTag)
-    .replace(/my_plugin_/g, phpPrefix);
+    .replace(/my_plugin_/g, phpPrefix)
+    .replace(/my_plugin/g, shortcodeTag);
 
   const newPath = path.join(dir, newBase);
 
