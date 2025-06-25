@@ -19,12 +19,12 @@ This boilerplate sets you up with a modern development environment so you can fo
 
 Clone the repository into a new folder. **Crucially, the folder name must match the "plugin slug"** you intend to use (e.g., my-cool-plugin).
 
-\# Replace 'my-cool-plugin' with your desired plugin slug
-git clone https://github.com/boodaah3d/wp\_react\_plugin\_boilerplate my-cool-plugin
+    \# Replace 'my-cool-plugin' with your desired plugin slug
+    git clone https://github.com/boodaah3d/wp\_react\_plugin\_boilerplate my-cool-plugin
 
 ### **Step 2: Navigate to the New Folder**
 
-cd my-cool-plugin
+    cd my-cool-plugin
 
 ### **Step 3: Run the Setup Script**
 
@@ -36,29 +36,29 @@ This is the most important step. The script will ask for your plugin's name and 
 * **Initialize a new, clean Git repository for your project.**
 * Create an initial commit with your new files.
 
-npm run setup
+    npm run setup
 
 ### **Step 4: Start Your Own Repository**
 
 After the setup script finishes, you can detached from the boilerplate repo and create a new repository on GitHub (or another service) and push your new project to it.
 
-\# Delete current git history
-rm -rf .git
+    \# Delete current git history
+    rm -rf .git
 
-\# Re-initialize as a new git repo, stage all files, make new clean commit
-git init
-git add .
-git commit \-m "Initial commit"
+    \# Re-initialize as a new git repo, stage all files, make new clean commit
+    git init
+    git add .
+    git commit \-m "Initial commit"
 
-\# Create a new repository on GitHub, then run the following:
-\# Replace the URL with your new repository's URL
-git remote add origin https://github.com/your-username/my-cool-plugin.git
-git branch \-M main
-git push \-u origin main
+    \# Create a new repository on GitHub, then run the following:
+    \# Replace the URL with your new repository's URL
+    git remote add origin https://github.com/your-username/my-cool-plugin.git
+    git branch \-M main
+    git push \-u origin main
 
 ### **Step 5: Develop & Build**
 
 Now you're ready to start building\!
 
 * **Production Build:** Build files for your plugin.
-  npm run build
+    npm run build
