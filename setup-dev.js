@@ -1,29 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-const readline = require('readline-sync');
 
 const EXCLUDED_DIRS = ['node_modules', 'build'];
-const EXCLUDED_FILES = ['.gitignore', 'package-lock.json', 'README.md', 'setup.js', 'setup-dev.js'];
+const EXCLUDED_FILES = ['package-lock.json', 'README.md', 'setup.js', 'setup-dev.js'];
 const EXCLUDED_PREFIXES = ['.git'];
 
-const pluginName = readline.question('Enter the plugin name: ').trim();
-
-const pluginSlug = pluginName
-  .toLowerCase()
-  .replace(/[^a-z0-9\- ]+/g, '')    // remove invalid chars
-  .replace(/ +/g, '-')              // spaces to hyphens
-  .replace(/-+/g, '-');             // collapse multiple hyphens
-
-const shortcodeTag = pluginSlug.replace(/-+/g, '_');
-
-const phpPrefix = shortcodeTag + '_';
-
-const directoryName = path.basename(__dirname);
-
-if (directoryName !== pluginSlug) {
-  console.error(`Error: Directory name should match ${pluginSlug} but is ${directoryName}`);
-  process.exit(1);
-}
+const pluginName = '__PLUGIN_NAME__';
+const pluginSlug = '__PLUGIN_SLUG__';
+const shortcodeTag = '__SHORTCODE_TAG__';
+const phpPrefix = '__PHP_PREFIX__';
 
 console.log('\nProcessing ...\n');
 
@@ -41,10 +26,10 @@ function replaceInFile(filePath) {
 
   const content = fs.readFileSync(filePath, 'utf8');
   const updated = content
-    .replace(/__PLUGIN_NAME__/g, pluginName)
-    .replace(/__PLUGIN_SLUG__/g, pluginSlug)
-    .replace(/__SHORTCODE_TAG__/g, shortcodeTag)
-    .replace(/__PHP_PREFIX__/g, phpPrefix);
+    .replace(/My Plugin/g, pluginName)
+    .replace(/my-plugin/g, pluginSlug)
+    .replace(/my_plugin/g, shortcodeTag)
+    .replace(/my_plugin_/g, phpPrefix);
 
   const base = path.basename(filePath);
 
@@ -61,10 +46,10 @@ function renameItem(oldPath) {
   const base = path.basename(oldPath);
 
   const newBase = base
-    .replace(/__PLUGIN_NAME__/g, pluginName)
-    .replace(/__PLUGIN_SLUG__/g, pluginSlug)
-    .replace(/__SHORTCODE_TAG__/g, shortcodeTag)
-    .replace(/__PHP_PREFIX__/g, phpPrefix);
+    .replace(/My Plugin/g, pluginName)
+    .replace(/my-plugin/g, pluginSlug)
+    .replace(/my_plugin/g, shortcodeTag)
+    .replace(/my_plugin_/g, phpPrefix);
 
   const newPath = path.join(dir, newBase);
 
