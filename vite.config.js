@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tailwindcss from 'tailwindcss';
+import tailwindcss from 'tailwindcss/vite';
 import { resolve } from 'path';
 
 const pluginDir = __dirname;
@@ -11,12 +11,10 @@ export default defineConfig({
     tailwindcss(),
   ],
   build: {
-    // This needs to match the path where the plugin build folder will be accessible
-    // from the WordPress root. e.g., /wp-content/plugins/your-plugin-slug/build/
-    base: './', // Use relative path for assets so it works regardless of WP install path
+    base: './',
     rollupOptions: {
       input: {
-        main: resolve(pluginDir, 'src/index.jsx'), // Entry point for your React app
+        main: resolve(pluginDir, 'src/index.jsx'),
       },
       output: {
         entryFileNames: 'static/js/[name].js',
