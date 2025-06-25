@@ -27,6 +27,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(pluginDir, 'src/index.jsx'),
+        admin: resolve(pluginDir, 'src/admin/index.jsx'),
       },
       output: {
         entryFileNames: 'static/js/[name].js',

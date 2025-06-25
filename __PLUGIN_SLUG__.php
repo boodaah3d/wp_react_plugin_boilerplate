@@ -22,3 +22,6 @@ require_once plugin_dir_path(__FILE__).'includes/shortcode.php';
 
 // Include enqueue scripts handler
 require_once plugin_dir_path(__FILE__).'includes/enqueue.php';
+
+// Include admin page handler
+require_once plugin_dir_path(__FILE__).'includes/admin-page.php';
