@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import './index.css'; // If you're using a global CSS file or Tailwind v3
 
 // Find the root element where the React app will be mounted
 const rootElement = document.getElementById('__PLUGIN_SLUG__-react-root');
