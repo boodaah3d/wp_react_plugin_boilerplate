@@ -28,13 +28,7 @@ Clone the repository into a new folder. **Crucially, the folder name must match 
 
 ### **Step 3: Run the Setup Script**
 
-This is the most important step. The script will ask for your plugin's name and then perform the following actions:
-
-* Rename all files and placeholders.
-* Install npm dependencies.
-* **Remove the original boilerplate's Git history.**
-* **Initialize a new, clean Git repository for your project.**
-* Create an initial commit with your new files.
+This is an important step. The script will ask for your plugin's name and then rename all files and placeholders.
 
     npm run setup
 
@@ -56,10 +50,10 @@ After the setup script finishes, you can detached from the boilerplate repo and 
     git branch -M main
     git push -u origin main
 
-### **Step 5: Develop & Build**
+### **Step 5: Install npm dependencies.**
 
-Now you're ready to start building\!
-
-* **Production Build:** Build files for your plugin.
+    npm install
+  
+### **Step 6: Build files for your plugin.**
 
     npm run build
