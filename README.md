@@ -26,13 +26,17 @@ Clone the repository into a new folder. **Crucially, the folder name must match 
 
     cd my-cool-plugin
 
-### **Step 3: Run the Setup Script**
+### **Step 3: Install npm dependencies.**
+
+    npm install
+
+### **Step 4: Run the Setup Script**
 
 This is an important step. The script will ask for your plugin's name and then rename all files and placeholders.
 
     npm run setup
 
-### **Step 4: Start Your Own Repository**
+### **Step 5: Start Your Own Repository**
 
 After the setup script finishes, you can detached from the boilerplate repo and create a new repository on GitHub (or another service) and push your new project to it.
 
@@ -50,10 +54,6 @@ After the setup script finishes, you can detached from the boilerplate repo and 
     git branch -M main
     git push -u origin main
 
-### **Step 5: Install npm dependencies.**
-
-    npm install
-  
 ### **Step 6: Build files for your plugin.**
 
     npm run build
